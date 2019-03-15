@@ -1,5 +1,5 @@
 {
-  "name": "moleculer-apollo-server",
+  "name": "@mapoio/moleculer-apollo-server",
   "version": "0.1.0",
   "description": "Apollo GraphQL server for Moleculer API Gateway",
   "main": "index.js",

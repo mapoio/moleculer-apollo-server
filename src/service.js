@@ -148,9 +148,13 @@ module.exports = function(mixinOptions) {
 				try {
 					let typeDefs = [];
 					let resolvers = {};
+					let schemaDirectives = {};
 
 					if (mixinOptions.typeDefs)
 						typeDefs.push(mixinOptions.typeDefs);
+
+					if (mixinOptions.typeDefs)
+						schemaDirectives = _.cloneDeep(mixinOptions.schemaDirectives);
 
 					if (mixinOptions.resolvers)
 						resolvers = _.cloneDeep(mixinOptions.resolvers);
@@ -331,7 +335,7 @@ module.exports = function(mixinOptions) {
 						typeDefs.push(str);
 					}
 
-					return makeExecutableSchema({ typeDefs, resolvers });
+					return makeExecutableSchema({ typeDefs, resolvers, schemaDirectives });
 
 				} catch(err) {
 					throw new MoleculerServerError("Unable to compile GraphQL schema", 500, "UNABLE_COMPILE_GRAPHQL_SCHEMA", { err });
