@@ -153,7 +153,7 @@ module.exports = function(mixinOptions) {
 					if (mixinOptions.typeDefs)
 						typeDefs.push(mixinOptions.typeDefs);
 
-					if (mixinOptions.typeDefs)
+					if (mixinOptions.schemaDirectives)
 						schemaDirectives = _.cloneDeep(mixinOptions.schemaDirectives);
 
 					if (mixinOptions.resolvers)
